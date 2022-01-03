@@ -14,7 +14,7 @@ import fs = require('fs');
         return
     }
 
-    const numberParser = new NumberParser()
-    await numberParser.loadFile(filePath)
-    numberParser.parseFile()
+    new NumberParser()
+        .loadFile(filePath)
+        .parseFile()
 })()

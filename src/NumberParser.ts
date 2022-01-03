@@ -49,23 +49,16 @@ export default class NumberParser {
         })
     }
 
-    public async loadFile (filePath: string): Promise<void> {
-        return new Promise((resolve, reject) => {
-            fs.readFile(filePath, 'utf8', (err, data) => {
-                if (err) {
-                    console.error(err)
-                    reject()
-                }
-                this.data = data
-                resolve()
-            })
-        })
+    public loadFile (filePath: string): this {
+        this.data = fs.readFileSync(filePath, 'utf8')
+        return this
     }
 
-    public parseFile (): void {
+    public parseFile (): this {
         this.entriesParsed.forEach((entry, index) => {
             console.log(this.getResult(entry, index))
         })
+        return this
     }
 
     private getNumberDigitForNumberFigure (numberFigure: NumberFigure): NumberDigit {
