@@ -10,9 +10,9 @@ Since TypeScript is my go-to language, I used it to solve this problem.
 
 1. Make sure you have node version `>= 16.13`
 2. Run `npm install` to install dependencies
-3. Run `npn run build` to build the app
+3. Run `npm run build` to build the app
 
-- `npn run start` - run program with predefined input file (`example-files/example.txt`)
+- `npm run start` - run program with predefined input file (`example-files/example.txt`)
 - `node build/src/main.js <path-to-your-file>` - run program with your own input file
 
 [Kata]: https://codingdojo.org/kata/BankOCR/
