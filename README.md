@@ -8,7 +8,7 @@ Since TypeScript is my go-to language, I used it to solve this problem.
 
 ## How to run it
 
-1. Make sure you have node version `>= 16.13`
+1. Run `nvm install 16.13; nvm use 16.13` to make sure you are using proper version of node.js
 2. Run `npm install` to install dependencies
 3. Run `npm run build` to build the app
 
