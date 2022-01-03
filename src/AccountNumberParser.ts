@@ -96,13 +96,9 @@ export default class AccountNumberParser {
     }
 
     private switchCharacter (numberFigure: NumberFigure, index: number): NumberFigure {
-        let replacement: string
-
-        if (this.pipeIndexes.includes(index)) {
-            replacement = numberFigure[index] !== '|' ? '|' : ' '
-        } else {
-            replacement = numberFigure[index] !== '_' ? '_' : ' '
-        }
+        const replacement = this.pipeIndexes.includes(index)
+            ? numberFigure[index] !== '|' ? '|' : ' '
+            : numberFigure[index] !== '_' ? '_' : ' '
 
         return numberFigure.substring(0, index) + replacement + numberFigure.substring(index + 1)
     }
