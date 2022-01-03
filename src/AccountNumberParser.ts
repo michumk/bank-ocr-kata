@@ -17,16 +17,13 @@ export default class AccountNumberParser {
         const entries: string[][] = []
 
         for (let i = 0; i < lines.length; i += 4) {
-            let entryLines = [
-                lines[i],
-                lines[i + 1],
-                lines[i + 2]
-            ]
             // make sure every line is 27 chars long
-            entryLines = entryLines.map(line =>
-                line + ' '.repeat(27 - line.length)
+            entries.push([
+                    lines[i],
+                    lines[i + 1],
+                    lines[i + 2]
+                ].map(line => line + ' '.repeat(27 - line.length))
             )
-            entries.push(entryLines)
         }
 
         return entries
