@@ -1,4 +1,4 @@
-import NumberParser from './NumberParser'
+import AccountNumberParser from './AccountNumberParser'
 import fs = require('fs');
 
 (async () => {
@@ -14,7 +14,7 @@ import fs = require('fs');
         return
     }
 
-    new NumberParser()
+    new AccountNumberParser()
         .loadFile(filePath)
         .parseFile()
 })()

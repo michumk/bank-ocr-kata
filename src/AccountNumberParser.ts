@@ -2,7 +2,7 @@ import fs = require('fs')
 import _ = require('lodash')
 import { NumberDigit, NumberFigure, NumberFigures, Result } from './Types'
 
-export default class NumberParser {
+export default class AccountNumberParser {
     private readonly pipeIndexes = [3, 5, 6, 8]
     private readonly underscoreIndexes = [1, 4, 7]
     private readonly viableIndexes = [
