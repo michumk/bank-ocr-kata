@@ -62,6 +62,12 @@ export default class NumberParser {
         })
     }
 
+    public parseFile (): void {
+        this.entriesParsed.forEach((entry, index) => {
+            console.log(this.getResult(entry, index))
+        })
+    }
+
     private getNumberDigitForNumberFigure (numberFigure: NumberFigure): NumberDigit {
         const numberDigit = _.findKey(NumberFigures, value => value === numberFigure)
         return (numberDigit ?? NumberDigit.UNKNOWN) as NumberDigit
@@ -243,11 +249,5 @@ export default class NumberParser {
             `${entryPreview} \n` +
             `=> ${accountNumber.join('')} ${status ?? ''} ${replacementsParsed} \n`
         )
-    }
-
-    public parseFile (): void {
-        this.entriesParsed.forEach((entry, index) => {
-            console.log(this.getResult(entry, index))
-        })
     }
 }
