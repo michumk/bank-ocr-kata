@@ -1,5 +1,5 @@
 import AccountNumberParser from './AccountNumberParser'
-import fs = require('fs');
+import fs = require('fs')
 
 (async () => {
     if (process.argv.length !== 3) {

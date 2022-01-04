@@ -1,9 +1,9 @@
 ## Getting Started
 
-This project is my solution for this [Kata].
-Since TypeScript is my go-to language, I used it to solve this problem.
+This project is my solution for this [Kata]. Since TypeScript is my go-to language, I used it to solve this problem.
 
 ### Libraries that I used
+
 - Lodash
 
 ## How to run it
