@@ -84,13 +84,11 @@ export default class AccountNumberParser {
     private isValidAccountNumber (accountNumber: NumberDigit[]): boolean {
         if (!this.isLegibleAccountNumber(accountNumber)) return false
 
-        const accountNumberReversed = _.cloneDeep(accountNumber)
-        accountNumberReversed.reverse()
-        const sum = accountNumberReversed.reduce((sum: number, currNumberDigit, index) => {
-            const value = parseInt(currNumberDigit)
-            const multiplier = index + 1
-            return sum + (value * multiplier)
-        }, 0)
+        const sum = [...accountNumber].reverse().reduce((sum: number, currNumberDigit, index) => {
+                const value = parseInt(currNumberDigit)
+                const multiplier = index + 1
+                return sum + (value * multiplier)
+            }, 0)
 
         return sum % 11 === 0
     }
