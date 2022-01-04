@@ -70,7 +70,7 @@ export default class AccountNumberParser {
     }
 
     private isUnfixableAccountNumber (accountNumber: NumberDigit[]): boolean {
-        return 2 <= accountNumber.reduce((unknownDigits: number, currNumberDigit) => {
+        return 1 < accountNumber.reduce((unknownDigits: number, currNumberDigit) => {
             return currNumberDigit === NumberDigit.UNKNOWN
                 ? unknownDigits + 1
                 : unknownDigits
