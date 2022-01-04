@@ -85,10 +85,10 @@ export default class AccountNumberParser {
         if (!this.isLegibleAccountNumber(accountNumber)) return false
 
         const sum = [...accountNumber].reverse().reduce((sum: number, currNumberDigit, index) => {
-                const value = parseInt(currNumberDigit)
-                const multiplier = index + 1
-                return sum + (value * multiplier)
-            }, 0)
+            const value = parseInt(currNumberDigit)
+            const multiplier = index + 1
+            return sum + (value * multiplier)
+        }, 0)
 
         return sum % 11 === 0
     }
@@ -195,18 +195,12 @@ export default class AccountNumberParser {
 
         // try to replace one broken character
         if (result.status === 'ILL') {
-            result.replacements = this.getReplacementsForIllegibleAccountNumber(
-                entry,
-                result.accountNumber
-            )
+            result.replacements = this.getReplacementsForIllegibleAccountNumber(entry, result.accountNumber)
         }
 
         // try to find possible replacements for all characters
         if (result.status === 'ERR') {
-            result.replacements = this.getReplacementsForInvalidAccountNumber(
-                entry,
-                result.accountNumber
-            )
+            result.replacements = this.getReplacementsForInvalidAccountNumber(entry, result.accountNumber)
         }
 
         // we found exact one replacement
